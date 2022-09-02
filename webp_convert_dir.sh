@@ -2,7 +2,7 @@
 
 set -e
 
-find $1 -type f -and \( -iname "*.jpg" -o -iname "*.jpeg" -o -iname "(.png" \) -print0 | while IFS= read -r -d '' f; do
+find $1 -type f -and \( -iname "*.jpg" -o -iname "*.jpeg" -o -iname "*.png" \) -print0 | while IFS= read -r -d '' f; do
   FPATH=${f%%.*}
   FEXT=${f##*.}
   WEBPFILE="$FPATH".webp
