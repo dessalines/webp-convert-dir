@@ -18,7 +18,7 @@ find "$1" -type f -and \( -iname "*.webp" \) -print0 | while IFS= read -r -d '' 
   exiftool -quiet -tagsfromfile "$f" -all:all "$JPGFILE"
 
   # Clear the rotation field
-  jhead -norot "$JPGFILE"
+  jhead -q -norot "$JPGFILE"
 
   # Remove the files
   rm "$f"
